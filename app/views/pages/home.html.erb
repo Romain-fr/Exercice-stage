@@ -1,0 +1,46 @@
+<h1>Bienvenue sur la page initial de mon projet</h1>
+
+<p>Cette page permet de calculer la somme des nombres que vous rentrerez. Pour ce faire:
+<br>- Rentrer un nombre dans l'endroit prévu pour
+<br>- Apuyer sur "Ajouter ce nombre à la liste"
+<br>- Une fois votre liste complète, appuyer sur "Calculer la somme des nombres de la liste" 
+<br>Le résultat apparaitra en bas de cette liste</p>
+
+
+<p>Appuyer sur "Initialiser" pour effacer tous les nombres de la liste</p>
+
+
+<%= form_tag "/Stage", method: "delete" do %>
+  <input type="submit" value="Initialiser" />
+<% end %>
+
+
+<% Number.all.each do |nb| %>
+<p><%= nb.value %></p>
+<% end %>
+
+<p>
+<%= form_tag "/Stage", method: "post" do %>
+  <input type="float" name="value" />
+  <input type="submit" value="Ajouter ce nombre à la liste" />
+<% end %>
+
+<p>
+
+</p>
+
+
+<p>
+
+</p>
+
+<%= form_tag "/Stage", method: "patch" do %>
+  <input type="submit" value="Calculer la somme des nombres de la liste" />
+<% end %>
+
+<p>
+
+</p>
+
+
+<h2><a href="/remerciements">Remerciements</a></h2>
